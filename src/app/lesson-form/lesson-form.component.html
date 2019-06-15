@@ -1,0 +1,22 @@
+
+    <form (ngSubmit)="onSubmit()" #lessonForm="ngForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="lesson.name"
+               class="form-control" id="name" name="name" placeholder="Enter your name"
+               required >
+      </div>
+     <div class="form-group">
+        <label>Name teacher</label>
+        <input type="text" [(ngModel)]="lesson.teacherName"
+               class="form-control" id="email" name="email" placeholder="Enter your email address"
+               required >
+       <br>
+         <label>Classroom number</label>
+        <input type="text" [(ngModel)]="lesson.classroomNumber"
+               class="form-control" name="classroomNumber" placeholder="Enter classroom's number"
+               required >
+
+      </div>
+      <button type="submit" [disabled]="!lessonForm.form.valid" class="btn btn-info">Submit</button>
+    </form>

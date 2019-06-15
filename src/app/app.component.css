@@ -1,0 +1,61 @@
+header {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+section {
+  width: 76%;
+  height: auto;
+  float: left;
+  padding: 2%;
+  background-color: #191919;
+  color: white;
+  border-radius: 10px;
+  margin-left: 1%;
+}
+
+aside {
+  width: 14%;
+  height: auto;
+  float: right;
+  padding: 2%;
+  background-color: #191919;
+  color: rgb(255, 217, 0);
+  border-radius: 10px;
+  margin-left: 1%;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  clear: both;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+}
+
+p {
+  font: 14px Arial, sans-serif;
+  text-align: center;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("../assets/img/background.jpg");
+
+  /* Add the blur effect */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
