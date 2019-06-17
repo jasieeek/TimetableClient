@@ -4,16 +4,15 @@ table {
 }
 
 thead {
-  background-color: dimgrey;
-  color: rgb(255, 217, 0);
+  background-color: #303032;
+  color: rgb(239, 179, 1);
 }
 
 th, td {
   text-align: left;
-  padding: 8px;
+  padding: 0.7%;
+  font-family: "Calibri Light";
 }
-
-
 
 h1 {
   text-align: center;
@@ -23,4 +22,21 @@ h1 {
 table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
+  text-align: center;
+  font-size: 1.5vw;
+
+}
+
+.nr-to-white {
+  background-color: #303032;
+  color: rgb(255, 217, 0);
+  font-weight: bold;
+
+}
+
+.lesson-link {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

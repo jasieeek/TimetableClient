@@ -21,11 +21,12 @@ export class TimetableComponent implements OnInit {
     "15:35-16:20",
   ];
 
+
   constructor(private lessonService: LessonService) {
   }
 
   ngOnInit() {
-    this.lessonService.findAll().subscribe(data => {
+    this.lessonService.findAllLessons().subscribe(data => {
       this.lessons = data;
     });
   }

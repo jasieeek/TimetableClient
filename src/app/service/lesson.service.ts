@@ -15,7 +15,11 @@ export class LessonService {
     this.timetableUrl = 'http://localhost:8080/timetable';
   }
 
-  public findAll(): Observable<Lesson[]> {
+  public findAllLessons(): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(this.timetableUrl);
+  }
+
+  public findAllClasses(): Observable<any> {
     return this.http.get<Lesson[]>(this.timetableUrl);
   }
 
