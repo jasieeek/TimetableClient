@@ -1,9 +1,10 @@
-
+<div class="content">
+  <h2>Add lesson</h2>
     <form (ngSubmit)="onSubmit()" #lessonForm="ngForm">
       <div class="form-group">
         <label>Name</label>
         <input type="text" [(ngModel)]="lesson.name"
-               class="form-control" id="name" name="name" placeholder="Enter your name"
+               class="form-control" id="name" name="name" placeholder="Enter name of school classes "
                required >
       </div>
      <div class="form-group">
@@ -12,11 +13,52 @@
                class="form-control" id="email" name="email" placeholder="Enter your email address"
                required >
        <br>
-         <label>Classroom number</label>
-        <input type="text" [(ngModel)]="lesson.classroomNumber"
-               class="form-control" name="classroomNumber" placeholder="Enter classroom's number"
-               required >
+       <label>Classroom number</label>
+       <select name="classroomNumber" [(ngModel)]="lesson.classroomNumber" required>
+         <option value="" disabled selected>Select your option</option>
+         <option *ngFor="let classroom of classrooms" value="{{classroom.name}}">{{classroom.name}}</option>
+       </select>
+<!--        <input type="text" [(ngModel)]="lesson.classroomNumber"-->
+<!--               class="form-control" name="classroomNumber" placeholder="Enter classroom's number"-->
+<!--               required >-->
+
+       <br>
+       <label>Class name</label>
+       <select name="className" [(ngModel)]="lesson.className" required="">
+         <option value="" disabled selected>Select your option</option>
+         <option *ngFor="let class of classes" value="{{class.name}}">{{class.name}}</option>
+       </select>
+<!--       <input type="text" [(ngModel)]="lesson.className"-->
+<!--              class="form-control" name="classroomName" placeholder="Enter name of class"-->
+<!--              required >-->
+
+       <br>
+       <label>DayOfWeek</label>
+       <select name="dayOfWeek" [(ngModel)]="lesson.dayOfWeek" required>
+         <option value="" disabled selected hidden>Select your option</option>
+         <option value="MONDAY">Monday</option>
+         <option value="TUESDAY">Tuesday</option>
+         <option value="WEDNESDAY">Wednesday</option>
+         <option value="THURSDAY">Thursday</option>
+         <option value="FRIDAY">Friday</option>
+       </select>
+
+       <br>
+       <label>Number of lesson hour</label>
+       <select name="sequence" [(ngModel)]="lesson.sequence" required>
+         <option value="" disabled selected>Select your option</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+       </select>
+
 
       </div>
-      <button type="submit" [disabled]="!lessonForm.form.valid" class="btn btn-info">Submit</button>
+      <button type="submit" [disabled]="!lessonForm.form.valid">Submit</button>
     </form>
+</div>

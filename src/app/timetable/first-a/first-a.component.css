@@ -20,12 +20,12 @@ h1 {
 }
 
 table, th, td {
-   border: 1px solid white;
-   border-collapse: collapse;
-   text-align: center;
-   font-size: 1.5vw;
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 1.5vw;
 
- }
+}
 
 .nr-to-white {
   background-color: #303032;

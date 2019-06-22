@@ -12,6 +12,11 @@ import {UserServiceService} from './service/user-service.service';
 import { TimetableComponent } from './timetable/timetable.component';
 import {LessonService} from './service/lesson.service';
 import { LessonFormComponent } from './lesson-form/lesson-form.component';
+import { FirstAComponent } from './timetable/first-a/first-a.component';
+import { FirstBComponent } from './timetable/first-b/first-b.component';
+import { TeacherFormComponent } from './teacher-form/teacher-form.component';
+import { ClassroomFormComponent } from './classroom-form/classroom-form.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,7 +25,12 @@ import { LessonFormComponent } from './lesson-form/lesson-form.component';
     UserListComponent,
     UserFormComponent,
     TimetableComponent,
-    LessonFormComponent
+    LessonFormComponent,
+    FirstAComponent,
+    FirstBComponent,
+    TeacherFormComponent,
+    ClassroomFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

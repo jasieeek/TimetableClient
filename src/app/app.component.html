@@ -14,53 +14,48 @@
 
     <div class="sidebar">
       <aside>
-<!--        <h3>Groups</h3>-->
-<!--        <ng-container *ngFor="let class of classes">-->
-<!--          <a class="group&class-link" routerLink="/timetable">{{class.}}</a>-->
-<!--        </ng-container>-->
         <h3>Groups</h3>
-        <a class="group&class-link" routerLink="/timetable">1A</a>
-        <a class="group&class-link" routerLink="/timetable">1B</a>
-        <a class="group&class-link" routerLink="/timetable">1C</a>
-        <a class="group&class-link" routerLink="/timetable">1D</a>
-        <a class="group&class-link" routerLink="/timetable">2A</a>
-        <a class="group&class-link" routerLink="/timetable">2B</a>
-        <a class="group&class-link" routerLink="/timetable">2C</a>
-        <a class="group&class-link" routerLink="/timetable">2D</a>
-        <a class="group&class-link" routerLink="/timetable">3A</a>
-        <a class="group&class-link" routerLink="/timetable">3B</a>
-        <a class="group&class-link" routerLink="/timetable">3C</a>
-        <a class="group&class-link" routerLink="/timetable">3D</a>
-        <a class="group&class-link" routerLink="/timetable">4A</a>
-        <a class="group&class-link" routerLink="/timetable">4B</a>
-        <a class="group&class-link" routerLink="/timetable">4C</a>
-        <a class="group&class-link" routerLink="/timetable">4D</a>
+        <ng-container *ngFor="let class of classes">
+          <a class="group&class-link" routerLink="/timetable/{{class.name}}">{{class.name}}</a>
+        </ng-container>
         <h3>Teachers</h3>
-        <a class="teacher-link" routerLink="/timetable">A.Kulakowski</a>
-        <a class="teacher-link" routerLink="/timetable">M.Plaza</a>
-        <a class="teacher-link" routerLink="/timetable">A.Lenarcik</a>
-        <a class="teacher-link" routerLink="/timetable">S.Deniziak</a>
-        <a class="teacher-link" routerLink="/timetable">M.Wiśniewski</a>
-        <a class="teacher-link" routerLink="/timetable">P.Sitek</a>
-        <a class="teacher-link" routerLink="/timetable">A.Krechowicz</a>
-        <a class="teacher-link" routerLink="/timetable">K.Wieczorek</a>
-        <a class="teacher-link" routerLink="/timetable">K.Poczęta</a>
-        <a class="teacher-link" routerLink="/timetable">M.Gorzalczany</a>
+        <ng-container *ngFor="let teacher of teachers">
+          <a class="teacher-link" routerLink="/timetable">{{teacher.surname}}</a>
+        </ng-container>
+<!--        EXAMPLE-->
+<!--        <a class="teacher-link" routerLink="/timetable">A.Kulakowski</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">M.Plaza</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">A.Lenarcik</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">S.Deniziak</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">M.Wiśniewski</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">P.Sitek</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">A.Krechowicz</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">K.Wieczorek</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">K.Poczęta</a>-->
+<!--        <a class="teacher-link" routerLink="/timetable">M.Gorzalczany</a>-->
         <h3>Classrooms</h3>
-        <a class="group&class-link" routerLink="/timetable">100</a>
-        <a class="group&class-link" routerLink="/timetable">101</a>
-        <a class="group&class-link" routerLink="/timetable">102</a>
-        <a class="group&class-link" routerLink="/timetable">103</a>
-        <a class="group&class-link" routerLink="/timetable">104</a>
-        <a class="group&class-link" routerLink="/timetable">105</a>
-        <a class="group&class-link" routerLink="/timetable">201</a>
-        <a class="group&class-link" routerLink="/timetable">202</a>
-        <a class="group&class-link" routerLink="/timetable">203</a>
-        <a class="group&class-link" routerLink="/timetable">204</a>
-        <a class="group&class-link" routerLink="/timetable">205</a>
-        <a class="group&class-link" routerLink="/timetable">301</a>
+        <ng-container *ngFor="let classroom of classrooms">
+          <a class="group&class-link" routerLink="/timetable">{{classroom.name}}</a>
+        </ng-container>
+        <!--        EXAMPLE-->
+<!--        <a class="group&class-link" routerLink="/timetable">100</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">101</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">102</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">103</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">104</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">105</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">201</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">202</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">203</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">204</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">205</a>-->
+<!--        <a class="group&class-link" routerLink="/timetable">301</a>-->
+
         <h3>For admin</h3>
+        <a class="teacher-link" routerLink="/login">Log in</a>
         <a class="teacher-link" routerLink="/addlesson">Add lesson</a>
+        <a class="teacher-link" routerLink="/addteacher">Add teacher</a>
+        <a class="teacher-link" routerLink="/addclassroom">Add classroom</a>
 <!--        <ul style="list-style: none">-->
 
 <!--          <li><a routerLink="/timetable">1A</a></li>-->
