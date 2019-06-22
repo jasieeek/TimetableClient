@@ -16,6 +16,7 @@ export class FirstAComponent implements OnInit {
   ngOnInit() {
     this.lessonService.findAllLessons().subscribe(data => {
       this.lessons = data;
+      console.log(this.lessons);
     });
   }
 

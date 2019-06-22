@@ -2,9 +2,9 @@
   <h2>Add classroom</h2>
   <form (ngSubmit)="onSubmit()" #classroomForm="ngForm">
     <div class="form-group">
-      <label>Name</label>
+<!--      <label>Number</label>-->
       <input type="text" [(ngModel)]="classroom.name"
-             class="form-control" id="name" name="name" placeholder="Enter name of classroom"
+             class="form-control" id="name" name="name" placeholder="Enter number of classroom"
              required >
     </div>
     <button type="submit" [disabled]="!classroomForm.form.valid">Submit</button>

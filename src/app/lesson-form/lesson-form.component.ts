@@ -4,6 +4,7 @@ import {Lesson} from '../model/lesson';
 import {LessonService} from '../service/lesson.service';
 import {Class} from '../model/class';
 import {Classroom} from '../model/classroom';
+import {Teacher} from '../model/teacher';
 
 @Component({
   selector: 'app-lesson-form',
@@ -14,7 +15,8 @@ export class LessonFormComponent implements OnInit {
 
   lesson: Lesson;
   classes: Class[];
-  classrooms: Classroom[]
+  classrooms: Classroom[];
+  teachers: Teacher[];
 
   constructor(private route: ActivatedRoute, private router: Router, private lessonService: LessonService) {
     this.lesson = new Lesson();
@@ -34,6 +36,9 @@ export class LessonFormComponent implements OnInit {
     });
     this.lessonService.findAllClassrooms().subscribe( data => {
       this.classrooms = data;
+    });
+    this.lessonService.findAllTeachers().subscribe( data => {
+      this.teachers = data;
     });
   }
 }

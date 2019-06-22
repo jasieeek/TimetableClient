@@ -9,13 +9,17 @@
       </div>
      <div class="form-group">
         <label>Name teacher</label>
-        <input type="text" [(ngModel)]="lesson.teacherName"
-               class="form-control" id="email" name="email" placeholder="Enter your email address"
-               required >
+       <select name="teacherName" [(ngModel)]="lesson.teacherName" required>
+         <option value="" disabled selected>Select teacher name</option>
+         <option *ngFor="let teacher of teachers" value="{{teacher.name}}">{{teacher.name}} {{teacher.surname}}</option>
+       </select>
+<!--        <input type="text" [(ngModel)]="lesson.teacherName"-->
+<!--               class="form-control" id="email" name="email" placeholder="Enter your email address"-->
+<!--               required >-->
        <br>
        <label>Classroom number</label>
        <select name="classroomNumber" [(ngModel)]="lesson.classroomNumber" required>
-         <option value="" disabled selected>Select your option</option>
+         <option value="" disabled selected>Select classroom number</option>
          <option *ngFor="let classroom of classrooms" value="{{classroom.name}}">{{classroom.name}}</option>
        </select>
 <!--        <input type="text" [(ngModel)]="lesson.classroomNumber"-->
@@ -25,8 +29,10 @@
        <br>
        <label>Class name</label>
        <select name="className" [(ngModel)]="lesson.className" required="">
-         <option value="" disabled selected>Select your option</option>
-         <option *ngFor="let class of classes" value="{{class.name}}">{{class.name}}</option>
+         <option value="" disabled selected>Select class name</option>
+         <option *ngFor="let class of classes" value="{{class.name}}">
+           {{class.name}}
+         </option>
        </select>
 <!--       <input type="text" [(ngModel)]="lesson.className"-->
 <!--              class="form-control" name="classroomName" placeholder="Enter name of class"-->
@@ -57,8 +63,11 @@
          <option value="8">8</option>
        </select>
 
-
       </div>
       <button type="submit" [disabled]="!lessonForm.form.valid">Submit</button>
     </form>
+  <div class="attention">
+    <p>ATTENTION!</p>
+    <p>To add lessons, you must first add a classroom, teacher and class.</p>
+  </div>
 </div>

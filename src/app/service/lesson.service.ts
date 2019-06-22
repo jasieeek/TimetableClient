@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Lesson} from '../model/lesson';
-import {User} from '../model/user';
 import {Class} from '../model/class';
 import {Teacher} from '../model/teacher';
 import {Classroom} from '../model/classroom';
@@ -16,8 +15,6 @@ export class LessonService {
   private groupsUrl: string;
   private teachersUrl: string;
   private classroomsUrl: string;
-  private allClassroomsUrl: string;
-  private allTeachersUrl: string;
 
   constructor(private http: HttpClient) {
     this.timetableUrl = 'http://localhost:8080/timetable';

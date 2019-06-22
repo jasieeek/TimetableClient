@@ -21,6 +21,7 @@ export class ClassroomFormComponent implements OnInit {
   }
 
   gotoLessonList() {
+    this.router.navigate(['/classroom']);
     this.router.navigate(['/timetable']);
   }
 
