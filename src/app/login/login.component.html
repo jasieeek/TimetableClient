@@ -1,10 +1,13 @@
-<form class="box" (ngSubmit)="onSubmit()">
+<form class="box" (ngSubmit)="onSubmit()" #loginForm="ngForm">
   <h1>Sign in</h1>
-  <input type="text" name="" placeholder="Username" required>
-  <input type="password" name="" placeholder="Password" required>
+  <input [(ngModel)]="username" type="text" name="login" placeholder="Username" required>
+  <input [(ngModel)]="password" type="password" name="password" placeholder="Password" required>
   <div id="remember">
     <input name="checky" id="checky" value="1" type="checkbox">
     <label class="terms">Remember me</label>
   </div>
+<!--  <button (click)=checkLogin() class="btn btn-success">-->
+<!--    Login-->
+<!--  </button>-->
   <input type="submit" value="Log in">
 </form>

@@ -1,0 +1,11 @@
+<div class="content">
+  <h2>Delete teacher</h2>
+  <form (ngSubmit)="onSubmit()" #teacherDelForm="ngForm">
+    <label>Name teacher</label>
+    <select name="teacherName" [(ngModel)]="teacherId" required>
+      <option value="" disabled selected>Select teacher name</option>
+      <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.name}} {{teacher.surname}}</option>
+    </select>
+    <button type="submit" [disabled]="!teacherDelForm.form.valid">Submit</button>
+  </form>
+</div>

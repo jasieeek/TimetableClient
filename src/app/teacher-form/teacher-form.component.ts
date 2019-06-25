@@ -22,7 +22,7 @@ export class TeacherFormComponent implements OnInit {
   }
 
   gotoLessonList() {
-    this.router.navigate(['/timetable']);
+    this.router.navigate(['/']);
   }
 
   ngOnInit() {

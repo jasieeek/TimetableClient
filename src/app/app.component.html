@@ -16,11 +16,11 @@
       <aside>
         <h3>Groups</h3>
         <ng-container *ngFor="let class of classes">
-          <a class="group&class-link" routerLink="/timetable/{{class.name}}">{{class.name}}</a>
+          <a class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
         </ng-container>
         <h3>Teachers</h3>
         <ng-container *ngFor="let teacher of teachers">
-          <a class="teacher-link" routerLink="/timetable">{{teacher.surname}}</a>
+          <a class="teacher-link" routerLink="/timetable/teacher{{teacher.id}}">{{teacher.name + " " + teacher.surname | teacherName}}</a>
         </ng-container>
 <!--        EXAMPLE-->
 <!--        <a class="teacher-link" routerLink="/timetable">A.Kulakowski</a>-->
@@ -35,7 +35,7 @@
 <!--        <a class="teacher-link" routerLink="/timetable">M.Gorzalczany</a>-->
         <h3>Classrooms</h3>
         <ng-container *ngFor="let classroom of classrooms">
-          <a class="group&class-link" routerLink="/timetable">{{classroom.name}}</a>
+          <a class="group&class-link" routerLink="/timetable/classroom{{classroom.id}}">{{classroom.name}}</a>
         </ng-container>
         <!--        EXAMPLE-->
 <!--        <a class="group&class-link" routerLink="/timetable">100</a>-->
@@ -52,10 +52,12 @@
 <!--        <a class="group&class-link" routerLink="/timetable">301</a>-->
 
         <h3>For admin</h3>
-        <a class="teacher-link" routerLink="/login">Log in</a>
-        <a class="teacher-link" routerLink="/addlesson">Add lesson</a>
-        <a class="teacher-link" routerLink="/addteacher">Add teacher</a>
-        <a class="teacher-link" routerLink="/addclassroom">Add classroom</a>
+        <a *ngIf="!authService.isUserLoggedIn()" class="teacher-link" routerLink="/login">Log in</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/logout">Log out</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addlesson">Add lesson</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addteacher">Add teacher</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delteacher">Del teacher</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclassroom">Add classroom</a>
 <!--        <ul style="list-style: none">-->
 
 <!--          <li><a routerLink="/timetable">1A</a></li>-->

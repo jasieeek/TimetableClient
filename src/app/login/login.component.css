@@ -31,7 +31,7 @@
   border-color: rgb(239, 179, 1);
 }
 
-.box input[type = "submit"]{
+.box input[type = "submit"], button{
   border:0;
   background: none;
   display: block;

@@ -14,12 +14,16 @@ export class LessonService {
   private timetableUrl: string;
   private groupsUrl: string;
   private teachersUrl: string;
+  private teachersDistinctUrl: string;
+  private delTeachersUrl: string;
   private classroomsUrl: string;
 
   constructor(private http: HttpClient) {
     this.timetableUrl = 'http://localhost:8080/timetable';
     this.groupsUrl = 'http://localhost:8080/';
     this.teachersUrl = 'http://localhost:8080/teacher';
+    this.teachersDistinctUrl = 'http://localhost:8080/teachers';
+    this.delTeachersUrl = 'http://localhost:8080/delteacher';
     this.classroomsUrl = 'http://localhost:8080/classroom';
   }
 
@@ -38,9 +42,16 @@ export class LessonService {
   public findAllTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.teachersUrl);
   }
+  public findDistinctTeachers(): Observable<Teacher[]> {
+    return this.http.get<Teacher[]>(this.teachersDistinctUrl);
+  }
 
   public saveTeacher(teacher: Teacher) {
     return this.http.post<Teacher>(this.teachersUrl, teacher);
+  }
+
+  public deleteTeacher(id: number){
+    return this.http.post<number>(this.delTeachersUrl, id);
   }
 
   public findAllClassrooms(): Observable<Classroom[]> {
@@ -50,5 +61,7 @@ export class LessonService {
   public saveClassroom(classroom: Classroom){
     return this.http.post<Classroom>(this.classroomsUrl, classroom);
   }
+
+
 
 }

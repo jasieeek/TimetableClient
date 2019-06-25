@@ -6,6 +6,6 @@ export class Lesson {
   teacherName: string;
   classroomNumber: string;
   className: string;
-  dayOfWeek: WeekDay;
+  dayOfWeek: string;
   sequence: number;
 }

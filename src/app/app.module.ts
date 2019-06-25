@@ -17,6 +17,9 @@ import { FirstBComponent } from './timetable/first-b/first-b.component';
 import { TeacherFormComponent } from './teacher-form/teacher-form.component';
 import { ClassroomFormComponent } from './classroom-form/classroom-form.component';
 import { LoginComponent } from './login/login.component';
+import { TeacherNamePipe } from './pipes/teacher-name.pipe';
+import { TeacherDelFormComponent } from './teacher-del-form/teacher-del-form.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { LoginComponent } from './login/login.component';
     FirstBComponent,
     TeacherFormComponent,
     ClassroomFormComponent,
-    LoginComponent
+    LoginComponent,
+    TeacherNamePipe,
+    TeacherDelFormComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
