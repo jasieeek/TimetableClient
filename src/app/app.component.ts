@@ -20,11 +20,20 @@ export class AppComponent implements OnInit{
   classes: Class[];
   teachers: Teacher[];
   classrooms: Classroom[];
+  timetable: TimetableComponent;
 
 
   constructor(private lessonService: LessonService, private authService: AuthenticationService){
     this.title = 'Timetable';
     this.titleSideBar = 'Find:';
+  }
+
+  getProperLessons(classname: String){
+    console.log("all lessons");
+    this.lessonService.findProperLessons(classname).subscribe( data => {
+      console.log(data);
+    });
+    // this.timetable.firstA();
   }
 
   ngOnInit(): void {
@@ -34,11 +43,11 @@ export class AppComponent implements OnInit{
     this.lessonService.findAllClassrooms().subscribe(data => {
       this.classrooms = data;
     });
-    // this.lessonService.findAllTeachers().subscribe(data => {
-    //   this.teachers = data;
-    // });
-    this.lessonService.findDistinctTeachers().subscribe( data => {
+    this.lessonService.findAllTeachers().subscribe(data => {
       this.teachers = data;
     });
+    // this.lessonService.findDistinctTeachers().subscribe( data => {
+    //   this.teachers = data;
+    // });
   }
 }

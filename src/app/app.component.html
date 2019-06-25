@@ -16,7 +16,7 @@
       <aside>
         <h3>Groups</h3>
         <ng-container *ngFor="let class of classes">
-          <a class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
+          <a (click)="getProperLessons(class.name)" class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
         </ng-container>
         <h3>Teachers</h3>
         <ng-container *ngFor="let teacher of teachers">
