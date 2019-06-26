@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { TeacherNamePipe } from './pipes/teacher-name.pipe';
 import { TeacherDelFormComponent } from './teacher-del-form/teacher-del-form.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ClassFormComponent } from './class-form/class-form.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     TeacherNamePipe,
     TeacherDelFormComponent,
-    LogoutComponent
+    LogoutComponent,
+    ClassFormComponent
   ],
   imports: [
     BrowserModule,

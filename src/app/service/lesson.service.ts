@@ -18,6 +18,7 @@ export class LessonService {
   private teachersDistinctUrl: string;
   private delTeachersUrl: string;
   private classroomsUrl: string;
+  private classesUrl: string;
 
   constructor(private http: HttpClient) {
     this.timetableUrl = 'http://localhost:8080/timetable';
@@ -27,6 +28,7 @@ export class LessonService {
     this.teachersDistinctUrl = 'http://localhost:8080/teachers';
     this.delTeachersUrl = 'http://localhost:8080/delteacher';
     this.classroomsUrl = 'http://localhost:8080/classroom';
+    this.classesUrl = 'http://localhost:8080/class';
   }
 
   public findProperLessons(className: String): Observable<Lesson[]> {
@@ -69,5 +71,9 @@ export class LessonService {
   }
 
 
+
+  public saveClass(group: Class){
+    return this.http.post<Class>(this.classesUrl, group);
+  }
 
 }

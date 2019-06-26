@@ -1,11 +1,14 @@
 <div class="container">
   <header>
     <h1>
-      Timetable&reg;
+      <u>
+        Timetable&reg;
+      </u>
     </h1>
 <!--    <img src="../assets/img/logo.png" alt="logo">-->
   </header>
   <div class="content">
+
     <div class="main-content">
       <section>
         <router-outlet></router-outlet>
@@ -16,11 +19,11 @@
       <aside>
         <h3>Groups</h3>
         <ng-container *ngFor="let class of classes">
-          <a (click)="getProperLessons(class.name)" class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
+          <a (click)="toTimetableByClassName(class.name)" class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
         </ng-container>
         <h3>Teachers</h3>
         <ng-container *ngFor="let teacher of teachers">
-          <a class="teacher-link" routerLink="/timetable/teacher{{teacher.id}}">{{teacher.name + " " + teacher.surname | teacherName}}</a>
+          <a (click)="toTimetableByTeacherName(teacher.name, teacher.surname)" class="teacher-link" routerLink="/timetable/teacher{{teacher.id}}">{{teacher.name + " " + teacher.surname | teacherName}}</a>
         </ng-container>
 <!--        EXAMPLE-->
 <!--        <a class="teacher-link" routerLink="/timetable">A.Kulakowski</a>-->
@@ -35,7 +38,7 @@
 <!--        <a class="teacher-link" routerLink="/timetable">M.Gorzalczany</a>-->
         <h3>Classrooms</h3>
         <ng-container *ngFor="let classroom of classrooms">
-          <a class="group&class-link" routerLink="/timetable/classroom{{classroom.id}}">{{classroom.name}}</a>
+          <a (click)="toTimetableByClassroomName(classroom.name)" class="group&class-link" routerLink="/timetable/classroom{{classroom.id}}">{{classroom.name}}</a>
         </ng-container>
         <!--        EXAMPLE-->
 <!--        <a class="group&class-link" routerLink="/timetable">100</a>-->
@@ -58,6 +61,7 @@
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addteacher">Add teacher</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delteacher">Del teacher</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclassroom">Add classroom</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclass">Add class</a>
 <!--        <ul style="list-style: none">-->
 
 <!--          <li><a routerLink="/timetable">1A</a></li>-->
@@ -67,11 +71,12 @@
       </aside>
     </div>
   </div>
+</div>
   <footer>
     All rights reserved &copy;
   </footer>
 
-</div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

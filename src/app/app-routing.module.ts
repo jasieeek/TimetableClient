@@ -10,6 +10,7 @@ import {LoginComponent} from './login/login.component';
 import {TeacherDelFormComponent} from './teacher-del-form/teacher-del-form.component';
 import {LogoutComponent} from './logout/logout.component';
 import {AuthGuardGuard} from './guard/auth-guard.guard';
+import {ClassFormComponent} from './class-form/class-form.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'addteacher', component: TeacherFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'delteacher', component: TeacherDelFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'addclassroom', component: ClassroomFormComponent, canActivate:[AuthGuardGuard]},
+  { path: 'addclass', component: ClassFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent, canActivate:[AuthGuardGuard]}
 ];

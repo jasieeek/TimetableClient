@@ -8,6 +8,7 @@ import {TeacherService} from './service/teacher.service';
 import {TimetableComponent} from './timetable/timetable.component';
 import {Methods} from './service/methods';
 import {AuthenticationService} from './service/authentication.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,20 +21,29 @@ export class AppComponent implements OnInit{
   classes: Class[];
   teachers: Teacher[];
   classrooms: Classroom[];
-  timetable: TimetableComponent;
+
+  tmpLessonsByClassName: Lesson[] = Array();
 
 
-  constructor(private lessonService: LessonService, private authService: AuthenticationService){
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private lessonService: LessonService,
+              private authService: AuthenticationService){
     this.title = 'Timetable';
     this.titleSideBar = 'Find:';
   }
 
-  getProperLessons(classname: String){
-    console.log("all lessons");
-    this.lessonService.findProperLessons(classname).subscribe( data => {
-      console.log(data);
+  toTimetableByClassName(className: String){
+    this.lessonService.findProperLessons(className).subscribe( data => {
+      this.tmpLessonsByClassName = data;
     });
-    // this.timetable.firstA();
+    this.router.navigate(['/timetable/classname' + className]);
+  }
+  toTimetableByTeacherName(teacherName: String, teacherSurname: String){
+    this.router.navigate(['/timetable/teacher' + teacherName + teacherSurname]);
+  }
+  toTimetableByClassroomName(classroomName: String){
+    this.router.navigate(['/timetable/classroom' + classroomName]);
   }
 
   ngOnInit(): void {
@@ -46,8 +56,5 @@ export class AppComponent implements OnInit{
     this.lessonService.findAllTeachers().subscribe(data => {
       this.teachers = data;
     });
-    // this.lessonService.findDistinctTeachers().subscribe( data => {
-    //   this.teachers = data;
-    // });
   }
 }

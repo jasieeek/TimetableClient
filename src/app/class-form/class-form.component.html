@@ -1,0 +1,13 @@
+<div class="content">
+  <h2>Add class</h2>
+  <form (ngSubmit)="onSubmit()" #classForm="ngForm">
+    <div class="form-group">
+      <!--      <label>Number</label>-->
+      <input type="text" [(ngModel)]="class.name"
+             class="form-control" id="name" name="name" placeholder="Enter number of classroom"
+             required >
+    </div>
+    <button type="submit" [disabled]="!classForm.form.valid">Submit</button>
+  </form>
+
+</div>
