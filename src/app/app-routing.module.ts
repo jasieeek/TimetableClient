@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {UserListComponent} from './user-list/user-list.component';
 import {UserFormComponent} from './user-form/user-form.component';
-import {TimetableComponent} from './timetable/timetable.component';
 import {LessonFormComponent} from './lesson-form/lesson-form.component';
 import {TeacherFormComponent} from './teacher-form/teacher-form.component';
 import {ClassroomFormComponent} from './classroom-form/classroom-form.component';
@@ -11,12 +10,17 @@ import {TeacherDelFormComponent} from './teacher-del-form/teacher-del-form.compo
 import {LogoutComponent} from './logout/logout.component';
 import {AuthGuardGuard} from './guard/auth-guard.guard';
 import {ClassFormComponent} from './class-form/class-form.component';
+import {TimetableForGroupsComponent} from './timetable-for-groups/timetable-for-groups.component';
+import {TimetableForTeachersComponent} from './timetable-for-teachers/timetable-for-teachers.component';
+import {TimetableForClassroomsComponent} from './timetable-for-classrooms/timetable-for-classrooms.component';
 
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent},
   { path: 'adduser', component: UserFormComponent},
-  { path: 'timetable/:id', component: TimetableComponent},
+  { path: 'timetable/classname/:id', component: TimetableForGroupsComponent},
+  { path: 'timetable/teacher/:id', component: TimetableForTeachersComponent},
+  { path: 'timetable/classroom/:id', component: TimetableForClassroomsComponent},
   { path: 'addlesson', component: LessonFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'addteacher', component: TeacherFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'delteacher', component: TeacherDelFormComponent, canActivate:[AuthGuardGuard]},

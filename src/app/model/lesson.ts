@@ -4,7 +4,7 @@ export class Lesson {
   id: string;
   name: string;
   teacherName: string;
-  classroomNumber: string;
+  classroomName: string;
   className: string;
   dayOfWeek: string;
   sequence: number;

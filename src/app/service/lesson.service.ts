@@ -12,7 +12,9 @@ import {Classroom} from '../model/classroom';
 export class LessonService {
 
   private timetableUrl: string;
-  private properLessonsUrl: string;
+  private classLessonsUrl: string;
+  private teacherLessonsUrl: string;
+  private classroomLessonsUrl: string;
   private groupsUrl: string;
   private teachersUrl: string;
   private teachersDistinctUrl: string;
@@ -22,17 +24,25 @@ export class LessonService {
 
   constructor(private http: HttpClient) {
     this.timetableUrl = 'http://localhost:8080/timetable';
-    this.properLessonsUrl = 'http://localhost:8080/timetable/classname'
+    this.classLessonsUrl = 'http://localhost:8080/timetable/classname'
+    this.teacherLessonsUrl = 'http://localhost:8080/timetable/teacher'
+    this.classroomLessonsUrl = 'http://localhost:8080/timetable/classroom'
     this.groupsUrl = 'http://localhost:8080/';
     this.teachersUrl = 'http://localhost:8080/teacher';
     this.teachersDistinctUrl = 'http://localhost:8080/teachers';
     this.delTeachersUrl = 'http://localhost:8080/delteacher';
     this.classroomsUrl = 'http://localhost:8080/classroom';
-    this.classesUrl = 'http://localhost:8080/class';
+    this.classesUrl = 'http://localhost:8080/group';
   }
 
-  public findProperLessons(className: String): Observable<Lesson[]> {
-    return this.http.get<Lesson[]>(this.properLessonsUrl + className);
+  public findLessonsByClassName(className: String): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(this.classLessonsUrl + "/" + className);
+  }
+  public findLessonsByTeacherName(teacherName: String): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(this.teacherLessonsUrl + "/" + teacherName);
+  }
+  public findLessonsByClassroomName(classroomName: String): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(this.classroomLessonsUrl + "/" + classroomName);
   }
 
   public findAllLessons(): Observable<Lesson[]> {
@@ -40,7 +50,7 @@ export class LessonService {
   }
 
   public findAllClasses(): Observable<Class[]> {
-    return this.http.get<Class[]>(this.groupsUrl);
+    return this.http.get<Class[]>(this.classesUrl);
   }
 
   public saveLesson(lesson: Lesson) {

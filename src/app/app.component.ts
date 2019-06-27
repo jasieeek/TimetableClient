@@ -1,12 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Lesson} from './model/lesson';
 import {LessonService} from './service/lesson.service';
 import {Class} from './model/class';
 import {Teacher} from './model/teacher';
 import {Classroom} from './model/classroom';
-import {TeacherService} from './service/teacher.service';
-import {TimetableComponent} from './timetable/timetable.component';
-import {Methods} from './service/methods';
 import {AuthenticationService} from './service/authentication.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -22,9 +18,6 @@ export class AppComponent implements OnInit{
   teachers: Teacher[];
   classrooms: Classroom[];
 
-  tmpLessonsByClassName: Lesson[] = Array();
-
-
   constructor(private route: ActivatedRoute,
               private router: Router,
               private lessonService: LessonService,
@@ -34,16 +27,17 @@ export class AppComponent implements OnInit{
   }
 
   toTimetableByClassName(className: String){
-    this.lessonService.findProperLessons(className).subscribe( data => {
-      this.tmpLessonsByClassName = data;
-    });
-    this.router.navigate(['/timetable/classname' + className]);
+    this.router.navigate(['/timetable/classname', className]);
   }
   toTimetableByTeacherName(teacherName: String, teacherSurname: String){
-    this.router.navigate(['/timetable/teacher' + teacherName + teacherSurname]);
+    let tmpTeacher: String = "";
+    tmpTeacher += teacherName.toString();
+    tmpTeacher += "-";
+    tmpTeacher += teacherSurname.toString();
+    this.router.navigate(['/timetable/teacher', tmpTeacher]);
   }
   toTimetableByClassroomName(classroomName: String){
-    this.router.navigate(['/timetable/classroom' + classroomName]);
+    this.router.navigate(['/timetable/classroom', classroomName]);
   }
 
   ngOnInit(): void {

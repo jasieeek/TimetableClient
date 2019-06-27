@@ -84,7 +84,28 @@ p {
   background-size: cover;
 }
 
-a:link, a:visited {
+/*a:link, a:visited {*/
+/*  background-color: #303032;*/
+/*  color: white;*/
+
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  display: inline-block;*/
+
+/*  margin-bottom: 8%;*/
+/*  margin-right: 5%;*/
+/*  border-radius: 8px;*/
+/*}*/
+
+a:hover, a:active {
+  background-color: rgb(239, 179, 1);
+  color: black;
+}
+
+.group\&class-link {
+  width: 50px;
+  width: auto;
+  padding: 5px;
   background-color: #303032;
   color: white;
 
@@ -95,20 +116,21 @@ a:link, a:visited {
   margin-bottom: 8%;
   margin-right: 5%;
   border-radius: 8px;
-
-
-}
-
-a:hover, a:active {
-  background-color: rgb(239, 179, 1);
-  color: black;
-}
-
-.group\&class-link {
-  width: 50px;
+  cursor: pointer;
 }
 
 .teacher-link {
   width: auto;
   padding: 5px;
+  background-color: #303032;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  margin-bottom: 8%;
+  margin-right: 5%;
+  border-radius: 8px;
+  cursor: pointer;
 }

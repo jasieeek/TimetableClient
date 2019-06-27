@@ -5,7 +5,6 @@
         Timetable&reg;
       </u>
     </h1>
-<!--    <img src="../assets/img/logo.png" alt="logo">-->
   </header>
   <div class="content">
 
@@ -19,41 +18,16 @@
       <aside>
         <h3>Groups</h3>
         <ng-container *ngFor="let class of classes">
-          <a (click)="toTimetableByClassName(class.name)" class="group&class-link" routerLink="/timetable/classname{{class.name}}">{{class.name}}</a>
+          <a (click)="toTimetableByClassName(class.name)" class="group&class-link">{{class.name}}</a>
         </ng-container>
         <h3>Teachers</h3>
         <ng-container *ngFor="let teacher of teachers">
-          <a (click)="toTimetableByTeacherName(teacher.name, teacher.surname)" class="teacher-link" routerLink="/timetable/teacher{{teacher.id}}">{{teacher.name + " " + teacher.surname | teacherName}}</a>
+          <a (click)="toTimetableByTeacherName(teacher.name, teacher.surname)" class="teacher-link" >{{teacher.name + " " + teacher.surname | teacherName}}</a>
         </ng-container>
-<!--        EXAMPLE-->
-<!--        <a class="teacher-link" routerLink="/timetable">A.Kulakowski</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">M.Plaza</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">A.Lenarcik</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">S.Deniziak</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">M.Wiśniewski</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">P.Sitek</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">A.Krechowicz</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">K.Wieczorek</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">K.Poczęta</a>-->
-<!--        <a class="teacher-link" routerLink="/timetable">M.Gorzalczany</a>-->
         <h3>Classrooms</h3>
         <ng-container *ngFor="let classroom of classrooms">
-          <a (click)="toTimetableByClassroomName(classroom.name)" class="group&class-link" routerLink="/timetable/classroom{{classroom.id}}">{{classroom.name}}</a>
+          <a (click)="toTimetableByClassroomName(classroom.name)" class="group&class-link">{{classroom.name}}</a>
         </ng-container>
-        <!--        EXAMPLE-->
-<!--        <a class="group&class-link" routerLink="/timetable">100</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">101</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">102</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">103</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">104</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">105</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">201</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">202</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">203</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">204</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">205</a>-->
-<!--        <a class="group&class-link" routerLink="/timetable">301</a>-->
-
         <h3>For admin</h3>
         <a *ngIf="!authService.isUserLoggedIn()" class="teacher-link" routerLink="/login">Log in</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/logout">Log out</a>
@@ -62,12 +36,6 @@
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delteacher">Del teacher</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclassroom">Add classroom</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclass">Add class</a>
-<!--        <ul style="list-style: none">-->
-
-<!--          <li><a routerLink="/timetable">1A</a></li>-->
-<!--          <li><a routerLink="/addlesson">Add lesson</a></li>-->
-
-<!--        </ul>-->
       </aside>
     </div>
   </div>

@@ -11,14 +11,14 @@
         <label>Name teacher</label>
        <select name="teacherName" [(ngModel)]="lesson.teacherName" required>
          <option value="" disabled selected>Select teacher name</option>
-         <option *ngFor="let teacher of teachers" value="{{teacher.name}}">{{teacher.name}} {{teacher.surname}}</option>
+         <option *ngFor="let teacher of teachers" value="{{teacher.name + ' ' + teacher.surname}}">{{teacher.name}} {{teacher.surname}}</option>
        </select>
 <!--        <input type="text" [(ngModel)]="lesson.teacherName"-->
 <!--               class="form-control" id="email" name="email" placeholder="Enter your email address"-->
 <!--               required >-->
        <br>
        <label>Classroom number</label>
-       <select name="classroomNumber" [(ngModel)]="lesson.classroomNumber" required>
+       <select name="classroomNumber" [(ngModel)]="lesson.classroomName" required>
          <option value="" disabled selected>Select classroom number</option>
          <option *ngFor="let classroom of classrooms" value="{{classroom.name}}">{{classroom.name}}</option>
        </select>
@@ -61,6 +61,7 @@
          <option value="6">6</option>
          <option value="7">7</option>
          <option value="8">8</option>
+         <option value="9">9</option>
        </select>
 
       </div>

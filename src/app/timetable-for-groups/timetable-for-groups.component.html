@@ -1,0 +1,498 @@
+<table>
+  <thead>
+  <tr>
+    <th scope="col">Nr</th>
+    <th scope="col">Hour</th>
+    <th scope="col">Monday</th>
+    <th scope="col">Tuesday</th>
+    <th scope="col">Wednesday</th>
+    <th scope="col">Thursday</th>
+    <th scope="col">Friday</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <!-- First row (1)-->
+  <tr>
+    <td class="nr-to-white">
+      1
+    </td>
+    <td>
+      8:00-8:45
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 1">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 1">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 1">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 1">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 1">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <!-- Second row (2)-->
+  <tr>
+    <td class="nr-to-white">
+      2
+    </td>
+    <td>
+      8:50-9:35
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 2">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 2">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 2">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 2">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 2">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      3
+    </td>
+    <td>
+      9:40-10:25
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 3">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 3">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 3">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 3">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 3">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      4
+    </td>
+    <td>
+      10:40-11:25
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 4">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 4">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 4">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 4">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 4">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      5
+    </td>
+    <td>
+      11:30-12:15
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 5">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 5">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 5">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 5">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 5">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      6
+    </td>
+    <td>
+      12:20-13:05
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 6">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 6">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 6">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 6">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 6">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      7
+    </td>
+    <td>
+      13:10-14:55
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 7">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 7">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 7">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 7">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 7">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      8
+    </td>
+    <td>
+      15:00-15:45
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 8">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 8">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 8">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 8">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 8">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td class="nr-to-white">
+      9
+    </td>
+    <td>
+      15:35-16:20
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'MONDAY' && lesson.sequence == 9">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'TUESDAY' && lesson.sequence == 9">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'WEDNESDAY' && lesson.sequence == 9">
+          {{lesson.name}}<br>
+          {{lesson.teacherName | teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'THURSDAY' && lesson.sequence == 9">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+    <td>
+      <ng-container *ngFor="let lesson of tmpLessonsByClassName">
+        <div class="lesson" *ngIf="lesson.dayOfWeek == 'FRIDAY' && lesson.sequence == 9">
+          {{lesson.name}}<br>
+          {{lesson.teacherName}}<br>
+          {{lesson.classroomName}}<br>
+        </div>
+      </ng-container>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
