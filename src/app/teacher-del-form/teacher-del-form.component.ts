@@ -11,18 +11,19 @@ import {LessonService} from '../service/lesson.service';
 export class TeacherDelFormComponent implements OnInit {
 
   teachers: Teacher[];
-  teacherId: number;
+  teacherId: String;
 
   constructor(private route: ActivatedRoute, private router: Router, private lessonService: LessonService) {
   }
 
   onSubmit() {
-    console.log(this.teachers[this.teacherId].id);
-    console.log(this.teachers[this.teacherId].name);
-    console.log(this.teachers[this.teacherId].surname);
-    this.router.navigate(['/']);
+    console.log('ID:' + this.teacherId)
+    this.lessonService.deleteTeacher(this.teacherId).subscribe( result  => this.goToCheck());
   }
 
+  goToCheck(){
+    location.assign('/check');
+  }
 
   ngOnInit() {
     this.lessonService.findAllTeachers().subscribe( data => {

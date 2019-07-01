@@ -10,17 +10,20 @@ import {Classroom} from '../model/classroom';
   styleUrls: ['./classroom-del-form.component.css']
 })
 export class ClassroomDelFormComponent implements OnInit {
-
   classrooms: Classroom[];
-  classroomId: number;
+  classroomId: String;
 
   constructor(private route: ActivatedRoute, private router: Router, private lessonService: LessonService) {
   }
 
   onSubmit() {
-    this.router.navigate(['/']);
+    console.log(this.classroomId);
+    this.lessonService.deleteClassroom(this.classroomId).subscribe( result => this.goToCheck())
   }
 
+  goToCheck(){
+    location.assign('/check');
+  }
 
   ngOnInit() {
     this.lessonService.findAllClassrooms().subscribe( data => {

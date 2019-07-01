@@ -20,7 +20,9 @@ export class LessonService {
   private teachersDistinctUrl: string;
   private delTeachersUrl: string;
   private classroomsUrl: string;
+  private delClassroomsUrl: string;
   private classesUrl: string;
+  private delClassesUrl: string;
 
   constructor(private http: HttpClient) {
     this.timetableUrl = 'http://localhost:8080/timetable';
@@ -30,9 +32,11 @@ export class LessonService {
     this.groupsUrl = 'http://localhost:8080/';
     this.teachersUrl = 'http://localhost:8080/teacher';
     this.teachersDistinctUrl = 'http://localhost:8080/teachers';
-    this.delTeachersUrl = 'http://localhost:8080/delteacher';
+    this.delTeachersUrl = 'http://localhost:8080/teacher/del';
     this.classroomsUrl = 'http://localhost:8080/classroom';
+    this.delClassroomsUrl = 'http://localhost:8080/classroom/del';
     this.classesUrl = 'http://localhost:8080/group';
+    this.delClassesUrl = 'http://localhost:8080/group/del';
   }
 
   public findLessonsByClassName(className: String): Observable<Lesson[]> {
@@ -60,16 +64,13 @@ export class LessonService {
   public findAllTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.teachersUrl);
   }
-  public findDistinctTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>(this.teachersDistinctUrl);
-  }
 
   public saveTeacher(teacher: Teacher) {
     return this.http.post<Teacher>(this.teachersUrl, teacher);
   }
 
-  public deleteTeacher(id: number){
-    return this.http.post<number>(this.delTeachersUrl, id);
+  public deleteTeacher(id: String){
+    return this.http.delete(this.delTeachersUrl + '/' + id);
   }
 
   public findAllClassrooms(): Observable<Classroom[]> {
@@ -80,10 +81,15 @@ export class LessonService {
     return this.http.post<Classroom>(this.classroomsUrl, classroom);
   }
 
-
+  public deleteClassroom(id: String){
+    return this.http.delete(this.delClassroomsUrl + '/' + id);
+  }
 
   public saveClass(group: Class){
     return this.http.post<Class>(this.classesUrl, group);
   }
 
+  public deleteClass(id: String){
+    return this.http.delete(this.delClassesUrl + '/' + id);
+  }
 }

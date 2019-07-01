@@ -12,15 +12,18 @@ import {Class} from '../model/class';
 export class ClassDelFormComponent implements OnInit {
 
   classes: Class[];
-  classId: number;
+  classId: String;
 
   constructor(private route: ActivatedRoute, private router: Router, private lessonService: LessonService) {
   }
 
   onSubmit() {
-    this.router.navigate(['/']);
+    this.lessonService.deleteClass(this.classId).subscribe( result => this.goToCheck())
   }
 
+  goToCheck(){
+    location.assign('/check');
+  }
 
   ngOnInit() {
     this.lessonService.findAllClasses().subscribe( data => {
