@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Teacher} from '../model/teacher';
 import {ActivatedRoute, Router} from '@angular/router';
-import {TeacherService} from '../service/teacher.service';
 import {LessonService} from '../service/lesson.service';
 
 @Component({
@@ -22,7 +21,7 @@ export class TeacherFormComponent implements OnInit {
   }
 
   gotoLessonList() {
-    this.router.navigate(['/']);
+    location.assign('/check');
   }
 
   ngOnInit() {

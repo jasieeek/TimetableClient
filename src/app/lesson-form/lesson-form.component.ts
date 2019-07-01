@@ -27,7 +27,7 @@ export class LessonFormComponent implements OnInit {
   }
 
   gotoLessonList() {
-    this.router.navigate(['/']);
+    location.assign('/check');
   }
 
   ngOnInit() {

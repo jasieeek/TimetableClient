@@ -23,6 +23,7 @@ import { TimetableForClassroomsComponent } from './timetable-for-classrooms/time
 import { ClassDelFormComponent } from './class-del-form/class-del-form.component';
 import { ClassroomDelFormComponent } from './classroom-del-form/classroom-del-form.component';
 import { LessonDelFormComponent } from './lesson-del-form/lesson-del-form.component';
+import { CheckOperationComponent } from './check-operation/check-operation.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { LessonDelFormComponent } from './lesson-del-form/lesson-del-form.compon
     TimetableForClassroomsComponent,
     ClassDelFormComponent,
     ClassroomDelFormComponent,
-    LessonDelFormComponent
+    LessonDelFormComponent,
+    CheckOperationComponent
   ],
   imports: [
     BrowserModule,

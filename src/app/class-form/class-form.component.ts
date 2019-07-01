@@ -22,7 +22,7 @@ export class ClassFormComponent implements OnInit {
   }
 
   gotoLessonList() {
-    this.router.navigate(['/']);
+    location.assign('/check');
   }
 
   ngOnInit() {

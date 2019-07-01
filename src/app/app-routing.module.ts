@@ -16,6 +16,7 @@ import {TimetableForClassroomsComponent} from './timetable-for-classrooms/timeta
 import {ClassroomDelFormComponent} from './classroom-del-form/classroom-del-form.component';
 import {ClassDelFormComponent} from './class-del-form/class-del-form.component';
 import {LessonDelFormComponent} from './lesson-del-form/lesson-del-form.component';
+import {CheckOperationComponent} from './check-operation/check-operation.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'delclassroom', component: ClassroomDelFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'addclass', component: ClassFormComponent, canActivate:[AuthGuardGuard]},
   { path: 'delclass', component: ClassDelFormComponent, canActivate:[AuthGuardGuard]},
+  { path: 'check', component: CheckOperationComponent, canActivate:[AuthGuardGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent, canActivate:[AuthGuardGuard]}
 ];

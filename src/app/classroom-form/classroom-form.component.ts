@@ -21,7 +21,7 @@ export class ClassroomFormComponent implements OnInit {
   }
 
   gotoLessonList() {
-    this.router.navigate(['/']);
+    location.assign('/check');
   }
 
   ngOnInit() {
