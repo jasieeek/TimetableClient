@@ -6,6 +6,6 @@
       <option value="" disabled selected>Select teacher name</option>
       <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.name}} {{teacher.surname}}</option>
     </select>
-    <button type="submit" [disabled]="!teacherDelForm.form.valid">Submit</button>
+    <button type="submit" [disabled]="!teacherDelForm.form.valid">Delete</button>
   </form>
 </div>

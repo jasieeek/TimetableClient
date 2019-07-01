@@ -20,6 +20,9 @@ import { ClassFormComponent } from './class-form/class-form.component';
 import { TimetableForGroupsComponent } from './timetable-for-groups/timetable-for-groups.component';
 import { TimetableForTeachersComponent } from './timetable-for-teachers/timetable-for-teachers.component';
 import { TimetableForClassroomsComponent } from './timetable-for-classrooms/timetable-for-classrooms.component';
+import { ClassDelFormComponent } from './class-del-form/class-del-form.component';
+import { ClassroomDelFormComponent } from './classroom-del-form/classroom-del-form.component';
+import { LessonDelFormComponent } from './lesson-del-form/lesson-del-form.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { TimetableForClassroomsComponent } from './timetable-for-classrooms/time
     ClassFormComponent,
     TimetableForGroupsComponent,
     TimetableForTeachersComponent,
-    TimetableForClassroomsComponent
+    TimetableForClassroomsComponent,
+    ClassDelFormComponent,
+    ClassroomDelFormComponent,
+    LessonDelFormComponent
   ],
   imports: [
     BrowserModule,

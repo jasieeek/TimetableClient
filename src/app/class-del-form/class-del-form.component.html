@@ -1,0 +1,11 @@
+<div class="content">
+  <h2>Delete class</h2>
+  <form (ngSubmit)="onSubmit()" #classDelForm="ngForm">
+    <label>Name class</label>
+    <select name="teacherName" [(ngModel)]="classId" required>
+      <option value="" disabled selected>Select class name</option>
+      <option *ngFor="let group of classes" value="{{group.id}}">{{group.name}}</option>
+    </select>
+    <button type="submit" [disabled]="!classDelForm.form.valid">Delete</button>
+  </form>
+</div>

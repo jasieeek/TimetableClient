@@ -21,23 +21,33 @@ export class AppComponent implements OnInit{
   constructor(private route: ActivatedRoute,
               private router: Router,
               private lessonService: LessonService,
-              private authService: AuthenticationService){
+              private authService: AuthenticationService) {
     this.title = 'Timetable';
     this.titleSideBar = 'Find:';
   }
 
-  toTimetableByClassName(className: String){
-    this.router.navigate(['/timetable/classname', className]);
+  // tslint:disable-next-line:ban-types
+  toTimetableByClassName(className: String) {
+    // this.router.navigate(['/timetable/classname', className]);
+    // @ts-ignore
+    location.assign(['timetable/classname/' + className]);
   }
-  toTimetableByTeacherName(teacherName: String, teacherSurname: String){
-    let tmpTeacher: String = "";
+  // tslint:disable-next-line:ban-types
+  toTimetableByTeacherName(teacherName: String, teacherSurname: String) {
+    // tslint:disable-next-line:ban-types
+    let tmpTeacher: String = '';
     tmpTeacher += teacherName.toString();
-    tmpTeacher += "-";
+    tmpTeacher += '-';
     tmpTeacher += teacherSurname.toString();
-    this.router.navigate(['/timetable/teacher', tmpTeacher]);
+    // this.router.navigate(['/timetable/teacher', tmpTeacher]);
+    // @ts-ignore
+    location.assign(['timetable/teacher/' + tmpTeacher]);
   }
-  toTimetableByClassroomName(classroomName: String){
-    this.router.navigate(['/timetable/classroom', classroomName]);
+  // tslint:disable-next-line:ban-types
+  toTimetableByClassroomName(classroomName: String) {
+    // this.router.navigate(['/timetable/classroom', classroomName]);
+    // @ts-ignore
+    location.assign(['timetable/classroom/' + classroomName]);
   }
 
   ngOnInit(): void {

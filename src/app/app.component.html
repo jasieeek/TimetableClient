@@ -32,10 +32,13 @@
         <a *ngIf="!authService.isUserLoggedIn()" class="teacher-link" routerLink="/login">Log in</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/logout">Log out</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addlesson">Add lesson</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/dellesson">Del lesson</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addteacher">Add teacher</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delteacher">Del teacher</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclassroom">Add classroom</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delclassroom">Del classroom</a>
         <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/addclass">Add class</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="teacher-link" routerLink="/delclass">Del class</a>
       </aside>
     </div>
   </div>

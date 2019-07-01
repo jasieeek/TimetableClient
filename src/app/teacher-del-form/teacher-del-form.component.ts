@@ -20,12 +20,9 @@ export class TeacherDelFormComponent implements OnInit {
     console.log(this.teachers[this.teacherId].id);
     console.log(this.teachers[this.teacherId].name);
     console.log(this.teachers[this.teacherId].surname);
-    this.lessonService.deleteTeacher(parseInt(this.teachers[this.teacherId].id)).subscribe(result => this.gotoLessonList());
-  }
-
-  gotoLessonList() {
     this.router.navigate(['/']);
   }
+
 
   ngOnInit() {
     this.lessonService.findAllTeachers().subscribe( data => {

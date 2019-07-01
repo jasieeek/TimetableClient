@@ -1,0 +1,11 @@
+<div class="content">
+  <h2>Delete lesson</h2>
+  <form (ngSubmit)="onSubmit()" #lessonDelForm="ngForm">
+    <label>Name lesson</label>
+    <select name="teacherName" [(ngModel)]="lessonId" required>
+      <option value="" disabled selected>Select lesson</option>
+      <option *ngFor="let lesson of lessons" value="{{lesson.id}}">{{lesson.name}} | {{lesson.className}} | {{lesson.dayOfWeek}} | {{lesson.sequence}}</option>
+    </select>
+    <button type="submit" [disabled]="!lessonDelForm.form.valid">Delete</button>
+  </form>
+</div>
