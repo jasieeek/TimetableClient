@@ -16,6 +16,7 @@ export class LessonService {
   private teacherLessonsUrl: string;
   private classroomLessonsUrl: string;
   private groupsUrl: string;
+  private delLessonsUrl: string;
   private teachersUrl: string;
   private teachersDistinctUrl: string;
   private delTeachersUrl: string;
@@ -30,6 +31,7 @@ export class LessonService {
     this.teacherLessonsUrl = 'http://localhost:8080/timetable/teacher'
     this.classroomLessonsUrl = 'http://localhost:8080/timetable/classroom'
     this.groupsUrl = 'http://localhost:8080/';
+    this.delLessonsUrl = 'http://localhost:8080/timetable/del';
     this.teachersUrl = 'http://localhost:8080/teacher';
     this.teachersDistinctUrl = 'http://localhost:8080/teachers';
     this.delTeachersUrl = 'http://localhost:8080/teacher/del';
@@ -59,6 +61,10 @@ export class LessonService {
 
   public saveLesson(lesson: Lesson) {
     return this.http.post<Lesson>(this.timetableUrl, lesson);
+  }
+
+  public deleteLesson(id: String){
+    return this.http.delete(this.delLessonsUrl + '/' + id);
   }
 
   public findAllTeachers(): Observable<Teacher[]> {
